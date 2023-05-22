@@ -14,18 +14,6 @@ spec:
     spec:
       containers:
         - name: my-node-app
-          image: amir121121/my-node-app:latest
+          image: gcr.io/thisislasttime/my-node-app:latest
           ports:
             - containerPort: 3000
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: my-node-app
-spec:
-  type: LoadBalancer
-  ports:
-    - port: 80
-      targetPort: 3000
-  selector:
-    app: my-node-app
